@@ -1,11 +1,11 @@
 <x-app-layout>
-    <div class="flex justify-center items-center min-h-[60vh]">
+    <div class="flex justify-center items-center min-h-[70vh]">
         <div class="flex flex-col min-w-[800px] bg-gray-400">
             <div class="flex justify-center p-4 text-3xl"> Login</div>
             <div class="bg-gray-300">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="flex flex-col p-8 text-2xl">
+                    <div class="flex flex-col p-8 text-2xl gap-3">
                         <label for="name">Gebruikersnaam</label>
                         <input class="rounded-lg text-xl" type="text" id="name" name="name">
                         <label for="email">Email</label>
