@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="flex justify-center items-center min-h-[70vh]">
-        <div class="flex flex-col min-w-[800px] bg-gray-400">
+        <div class="flex flex-col min-w-[500px] lg:min-w-[800px] mt-10 bg-gray-400">
             <div class="flex justify-center p-4 text-3xl"> Registreer hier</div>
             <div class="bg-gray-300">
                 <form method="POST" action="{{ route('register') }}">
@@ -29,9 +29,9 @@
                         @enderror
 
                     </div>
-                    <div class="flex justify-center gap-10 pb-10">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg">{{ __('Register') }}</button>
-                        <a class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg" href="{{ route('register') }}">Heb je al een account? Log hier in</a>
+                    <div class="flex justify-center lg:flex-row gap-10 pb-10">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg flex  h-12">{{ __('Register') }}</button>
+                        <a class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg w-52 lg:w-80" href="{{ route('register') }}">Heb je al een account? Log hier in</a>
                     </div>
                 </form>
             </div>

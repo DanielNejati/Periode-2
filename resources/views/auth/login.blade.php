@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="flex justify-center items-center min-h-[70vh]">
-        <div class="flex flex-col min-w-[800px] bg-gray-400">
+        <div class="flex flex-col min-w-[400px] lg:min-w-[800px] bg-gray-400">
             <div class="flex justify-center p-4 text-3xl"> Login</div>
             <div class="bg-gray-300">
                 <form method="POST" action="{{ route('login') }}">
