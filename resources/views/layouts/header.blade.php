@@ -5,8 +5,8 @@
         </a>
         <div class="flex flex-row">
             <div class="flex items-center gap-10 md:gap-20">
-                <a href="{{route('dashboard')}}" class="text-xl md:text-2xl">Busritten</a>
-                <a href="{{route('dashboard')}}" class="text-xl md:text-2xl">Festivals</a>
+                <a href="{{route('busritten-pagina')}}" class="text-xl md:text-2xl">Busritten</a>
+                <a href="{{route('festival-pagina')}}" class="text-xl md:text-2xl">Festivals</a>
             </div>
         </div>
         <div class="flex flex-row mr-5">

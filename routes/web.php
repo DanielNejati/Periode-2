@@ -8,8 +8,17 @@ Route::get('/', function () {
     return view('homepagina');
 })->name("homepagina");
 
+Route::get('/festivals', function () {
+    return view('festivals.festival-pagina');
+})->name("festival-pagina");
+
+Route::get('/busritten', function () {
+    return view('busritten.busritten-pagina');
+})->name("busritten-pagina");
+
 //Redirect to named route...
 //Route::redirect('/here', '/there');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
