@@ -16,6 +16,14 @@ Route::get('/busritten', function () {
     return view('busritten.busritten-pagina');
 })->name("busritten-pagina");
 
+Route::middleware('Admin')->group(function () {
+
+    Route::get('/admin-dashboard', function () {
+        return view('admin.admin-dashboard');
+    })->name("admin-dashboard");
+
+});
+
 //Redirect to named route...
 //Route::redirect('/here', '/there');
 

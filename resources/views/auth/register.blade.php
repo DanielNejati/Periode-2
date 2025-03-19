@@ -17,11 +17,19 @@
                         @error('email')
                         <div class="text-red-500 text-lg">{{ $message }}</div>
                         @enderror
+
+                        <label for="tel">Tel</label>
+                        <input class="rounded-lg text-xl" type="number" id="tel" name="tel" placeholder="Bijv. 31612345678">
+                        @error('tel')
+                        <div class="text-red-500 text-lg">{{ $message }}</div>
+                        @enderror
+
                         <label for="password">Wachtwoord</label>
                         <input class="rounded-lg text-xl" type="password" id="password" name="password">
                         @error('password')
                         <div class="text-red-500 text-lg">{{ $message }}</div>
                         @enderror
+
                         <label for="password_confirmation">Herhaal wachtwoord</label>
                         <input class="rounded-lg text-xl" type="text" id="password_confirmation" name="password_confirmation">
                         @error('password_confirmation')

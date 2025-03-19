@@ -6,8 +6,6 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="flex flex-col p-8 text-2xl gap-3">
-                        <label for="name">Gebruikersnaam</label>
-                        <input class="rounded-lg text-xl" type="text" id="name" name="name">
                         <label for="email">Email</label>
                         <input class="rounded-lg text-xl" type="text" id="email" name="email">
                         <label for="password">Wachtwoord</label>
