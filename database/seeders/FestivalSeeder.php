@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Busrit;
-use App\Models\busritten;
-use App\Models\festival;
+use App\Models\Festival;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,17 +13,9 @@ class FestivalSeeder extends Seeder
      */
     public function run(): void
     {
-        festival::factory()
+        Festival::factory()
+            // Specifies the number of festivals to create
             ->count(10)
-            // Deze functie maakt busritten aan nadat het festival is aangemaakt
-            ->afterCreating(function (festival $festival) {
-                // Dit maakt 2 busritten aan voor elk festival dat wordt aangemaakt
-                Busrit::factory()
-                    ->count(2)
-                    ->create([
-                        'festival_id' => $festival->id,
-                    ]);
-            })
             ->create();
     }
 }

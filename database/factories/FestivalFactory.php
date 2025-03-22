@@ -15,20 +15,16 @@ class FestivalFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = festival::class;
+    protected $model = Festival::class;
     public function definition(): array
     {
         return [
-            'naam'=>$this->faker->name,
-            'datum'=>$this->faker->date,
-            'genre'=>$this->faker->word,
-            'tijdsduur_festival'=>$this->faker->time,
-            'locatie'=>$this->faker->streetAddress(),
-            'stad'=>$this->faker->city(),
-            'prijs'=>$this->faker->randomFloat(2, 0, 100),
-            'festival_website_url'=>$this->faker->url,
-            'beschrijving'=>$this->faker->text,
-            'afbeelding'=>$this->faker->imageUrl(),
+            'name' => $this->faker->name,
+            'duration' => $this->faker->numberBetween(1, 10),
+            'location' => $this->faker->city,
+            'festival_type' => $this->faker->word,
+            'price' => $this->faker->randomDigit,
+
         ];
     }
 }

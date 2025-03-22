@@ -10,6 +10,11 @@ class Bus extends Model
     use HasFactory;
     protected $primaryKey = 'bus_id';
 
+    protected $fillable = [
+        'user_id',
+        'festival_id'
+    ];
+
 
     // A bus belongs to a user
     public function User(){
@@ -19,8 +24,5 @@ class Bus extends Model
     public function Festival(){
         return $this->belongsTo(Festival::class, 'festival_id', 'festival_id');
     }
-    // A bus has many busrides
-    public function BusRide(){
-        $this->hasMany(Busride::class);
-    }
+
 }

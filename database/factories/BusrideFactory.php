@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Bus;
+use App\Models\Busride;
+use App\Models\Festival;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +17,17 @@ class BusrideFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = Busride::class;
     public function definition(): array
     {
-        return [
-            //
+            return [
+                'bus_id'=> Bus::factory(),
+                'festival_id'=> Festival::factory(),
+                'duration'=> $this->faker->numberBetween(1, 10),
+                'departure_time'=> $this->faker->time(),
+                'departure'=> $this->faker->city(),
+                'location' => $this->faker->city(),
+                'date'=> $this->faker->date(),
         ];
     }
 }

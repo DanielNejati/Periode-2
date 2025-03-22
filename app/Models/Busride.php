@@ -11,6 +11,15 @@ class Busride extends Model
     use HasFactory;
     protected $primaryKey = 'busride_id';
 
+    protected $fillable = [
+      'bus_id',
+      'festival_id',
+      'duration',
+      'departure_time',
+      'location',
+      'date'
+    ];
+
     // A busride belongs to a festival
     public function Festival(){
         $this->belongsTo(Festival::class, 'festival_id', 'festival_id');

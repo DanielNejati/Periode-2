@@ -1,3 +1,3 @@
 <x-app-layout>
-    Busritten pagina
+    Dit is het festival pagina
 </x-app-layout>

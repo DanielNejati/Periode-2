@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FestivalController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
@@ -21,8 +22,10 @@ Route::middleware('Admin')->group(function () {
     Route::get('/admin-dashboard', function () {
         return view('admin.admin-dashboard');
     })->name("admin-dashboard");
-
 });
+
+//Festival controller
+Route::resource('Festival', FestivalController::class);
 
 //Redirect to named route...
 //Route::redirect('/here', '/there');
