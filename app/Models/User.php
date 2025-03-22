@@ -13,6 +13,11 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
     protected $primaryKey = 'user_id';
 
+    // Een gebruiker kan meerdere bussen bevatten
+    public function Busses(){
+        return $this->hasMany(Bus::class, 'user_id', 'user_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

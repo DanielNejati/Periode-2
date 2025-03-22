@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Festival;
+use App\Models\festival;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Festival>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\festival>
  */
 class FestivalFactory extends Factory
 {
@@ -15,7 +15,7 @@ class FestivalFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Festival::class;
+    protected $model = festival::class;
     public function definition(): array
     {
         return [
