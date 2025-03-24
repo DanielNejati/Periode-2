@@ -1,21 +1,21 @@
 <header class="min-h-28 p4 bg-blue-500 p-4">
     <div class="flex justify-between">
-        <a class="p-5" href="{{route('homepagina')}}">
-            <img src="{{asset('photos/FastWheelsLogo.jpg')}}" alt="" class="rounded max-w-[150px]">
+        <a class="p-5" href="{{route('homepage')}}">
+            <img src="{{asset('photos/FastWheelsLogo.jpg')}}" alt="" class="rounded-sm max-w-[150px]">
         </a>
         <div class="flex flex-row">
             <div class="flex items-center gap-10 md:gap-20">
-                {{--                Checkt of de huidige pagina de buspagina is, zo ja dan wordt de tekst 'busritten' met een underline weergegeven.--}}
-                @if(Request()->path() === 'busritten')
-                    <a href="{{route('busritten-pagina')}}" class="border-b-4 text-xl md:text-2xl">Busritten</a>
+                {{--                Checkt of de huidige pagina de buspagina is, zo ja dan wordt de tekst 'busrides' met een underline weergegeven.--}}
+                @if(Request()->path() === 'busrides')
+                    <a href="{{route('busride.index')}}" class="border-b-4 text-xl md:text-2xl">Busritten</a>
                 @else
-                    <a href="{{route('busritten-pagina')}}" class="text-xl md:text-2xl">Busritten</a>
+                    <a href="{{route('busride.index')}}" class="text-xl md:text-2xl">Busritten</a>
                 @endif
                 {{--                Checkt of de huidige pagina de festival is, zo ja dan wordt de tekst 'festivals' met een underline weergegeven.--}}
-                @if(Request()->path() === 'festivals')
-                    <a href="{{route('festival-pagina')}}" class=" border-b-4 text-xl md:text-2xl">Festivals</a>
+                @if(Request()->path() === 'festival')
+                    <a href="{{route('festival.index')}}" class=" border-b-4 text-xl md:text-2xl">Festivals</a>
                 @else
-                    <a href="{{route('festival-pagina')}}" class="text-xl md:text-2xl">Festivals</a>
+                    <a href="{{route('festival.index')}}" class="text-xl md:text-2xl">Festivals</a>
                 @endif
 
 {{--                Checkt of de gebruiker geauthenticeerd is en of de rol van de gebruiker Admin is , zo ja dan wordt de tekst 'Dashboard' met een underline weergegeven.--}}
@@ -30,6 +30,7 @@
 
                     @endif
                 @endauth
+
             </div>
         </div>
         <div class="flex flex-row mr-5">

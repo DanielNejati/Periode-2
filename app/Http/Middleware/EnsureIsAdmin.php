@@ -19,6 +19,6 @@ class EnsureIsAdmin
         if (Auth::check() && Auth::user()->role === 'Admin') {
             return $next($request);
         }
-        return redirect(route('homepagina'));
+        return redirect(route('homepage'));
     }
 }

@@ -1,3 +1,3 @@
 <x-app-layout>
-    Festival ... pagina
+    Busritten edit
 </x-app-layout>

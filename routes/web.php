@@ -1,21 +1,18 @@
 <?php
 
+use App\Http\Controllers\BusrideController;
 use App\Http\Controllers\FestivalController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 
 Route::get('/', function () {
-    return view('homepagina');
-})->name("homepagina");
+    return view('homepage');
+})->name("homepage");
 
-Route::get('/festivals', function () {
-    return view('festivals.festival-pagina');
-})->name("festival-pagina");
-
-Route::get('/busritten', function () {
-    return view('busritten.busritten-pagina');
-})->name("busritten-pagina");
+Route::get('/busrides', function () {
+    return view('busrides.busrides-page');
+})->name("busrides-page");
 
 Route::middleware('Admin')->group(function () {
 
@@ -25,7 +22,9 @@ Route::middleware('Admin')->group(function () {
 });
 
 //Festival controller
-Route::resource('Festival', FestivalController::class);
+Route::resource('festival', FestivalController::class);
+
+Route::resource('busride', BusrideController::class);
 
 //Redirect to named route...
 //Route::redirect('/here', '/there');

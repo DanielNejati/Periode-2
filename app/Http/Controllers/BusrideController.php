@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Busride;
 use App\Http\Requests\StoreBusrideRequest;
 use App\Http\Requests\UpdateBusrideRequest;
+use App\Models\busritten;
 
 class BusrideController extends Controller
 {
@@ -13,7 +14,8 @@ class BusrideController extends Controller
      */
     public function index()
     {
-        //
+        $busrides = Busride::all();
+        return view('busrides.index', compact('busrides'));
     }
 
     /**
@@ -21,7 +23,7 @@ class BusrideController extends Controller
      */
     public function create()
     {
-        //
+        return view('busrides.create');
     }
 
     /**
@@ -35,17 +37,19 @@ class BusrideController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Busride $busride)
+    public function show($id)
     {
-        //
+        $busride = Busride::find($id);
+        return view('busrides.show', compact('busride'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Busride $busride)
+    public function edit($id)
     {
-        //
+        $busride = Busride::find($id);
+        return view('busrides.show', compact('busride'));
     }
 
     /**

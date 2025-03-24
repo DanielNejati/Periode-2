@@ -1,3 +1,3 @@
 <x-app-layout>
-    Dit is het festival pagina
+    Festival edit
 </x-app-layout>

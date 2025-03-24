@@ -1,3 +1,3 @@
 <x-app-layout>
-    Dit is de festival create pagina
+    Festival create
 </x-app-layout>
