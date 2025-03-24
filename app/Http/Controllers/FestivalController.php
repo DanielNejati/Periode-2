@@ -24,6 +24,11 @@ class FestivalController extends Controller
         return view('festivals.create');
     }
 
+    public function variabelFestivals()
+    {
+        $festivals = Festival::all();
+        return view('busrides.index', compact('festivals'));
+    }
     /**
      * Store a newly created resource in storage.
      */
@@ -54,19 +59,19 @@ class FestivalController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(festival $festival)
+    public function show($id)
     {
-        $festival = Festival::find($festival->id);
+        $festival = Festival::find($id);
         return view('festivals.show', compact('festival'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(festival $festival)
+    public function edit($id)
     {
-        $festival = Festival::find($festival->id);
-        return view('festivals.show', compact('festival'));
+        $festival = Festival::find($id);
+        return view('festivals.edit', compact('festival'));
     }
 
     /**

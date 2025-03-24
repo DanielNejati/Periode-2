@@ -15,7 +15,7 @@
                     <div class="flex flex-col ml-15">
                         <div class="flex justify-center text-3xl">{{$festival->name}}</div>
                         <div class="flex flex-row gap-10 mt-5">
-                            <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                            <a href="{{route('festival.show',$festival->festival_id)}}" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
                                 Meer info
                             </a>
                             <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">

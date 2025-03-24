@@ -22,7 +22,7 @@ class Busride extends Model
 
     // A busride belongs to a festival
     public function Festival(){
-        $this->belongsTo(Festival::class, 'festival_id', 'festival_id');
+        return $this->belongsTo(Festival::class, 'festival_id', 'festival_id');
     }
 
     // A busride belongs to a bus

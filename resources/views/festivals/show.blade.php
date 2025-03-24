@@ -1,3 +1,3 @@
 <x-app-layout>
-    Festival ... pagina
+    Festival {{$festival->name}} pagina
 </x-app-layout>
