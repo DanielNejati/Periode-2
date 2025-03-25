@@ -1,4 +1,5 @@
 import './bootstrap';
+import './checkbox';
 
 import Alpine from 'alpinejs';
 

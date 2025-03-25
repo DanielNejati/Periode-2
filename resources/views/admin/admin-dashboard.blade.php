@@ -8,7 +8,7 @@
                     {{--                      CRUD for festivals    --}}
                     <div class="flex justify-center bg-gray-400 p-2 text-2xl min-w-[400px]">Festivals</div>
                     <div class="ml-[120px] flex gap-5">
-                        <a href="{{route('festival.index')}}">
+                        <a href="{{route('management.indexFestival')}}">
                             <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
                         </a>
                         <a href="{{route('festival.create')}}">
@@ -20,7 +20,7 @@
                     {{--                     CRUD for busrides          --}}
                     <div class="flex justify-center bg-gray-400 p-2 text-2xl min-w-[400px]">Busritten</div>
                     <div class="ml-[120px] flex gap-5">
-                                                <a href="{{route('busride.index')}}">
+                                                <a href="{{route('management.index')}}">
                         <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
                                                 </a>
                                                 <a href="{{route('busride.create')}}">
@@ -33,9 +33,9 @@
                     {{-- Lijst om gebruikers te bekijken          --}}
                     <div class="flex justify-center bg-gray-400 p-2 text-2xl min-w-[400px]">Gebruikers</div>
                     <div class="ml-[120px] flex gap-5">
-                        {{--                        <a href="{{route('busrides.index')}}">--}}
+                                                <a href="{{route('management.indexUsers')}}">
                         <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
-                        {{--                        </a>--}}
+                                                </a>
                     </div>
                 </div>
 
