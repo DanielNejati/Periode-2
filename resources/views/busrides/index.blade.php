@@ -40,7 +40,7 @@
                                     {{carbon\carbon::parse($busride->arrival_time)->format('H:i')}}
                                 </div>
                                 <div class="scale-230 flex items-center text-white"><p>|</p></div>
-                                <div class="p-2 min-w-[150px] max-w-[150px] flex justify-center">
+                                <div title="Hiermee kan je een ticket kopen naar het passende busrit" class="p-2 min-w-[150px] max-w-[150px] flex justify-center">
                                     <img src="{{asset('photos/winkelwagen.png')}}" class="max-w-[30px] max-h-[30px]">
                                 </div>
                             </div>

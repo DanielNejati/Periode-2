@@ -38,8 +38,8 @@
 
                     </div>
                     <div class="flex justify-center lg:flex-row gap-10 pb-10">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg flex  h-12">{{ __('Register') }}</button>
-                        <a class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg w-52 lg:w-80" href="{{ route('register') }}">Heb je al een account? Log hier in</a>
+                        <button class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg flex  h-12">{{ __('Register') }}</button>
+                        <a class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg w-52 lg:w-80" href="{{ route('register') }}">Heb je al een account? Log hier in</a>
                     </div>
                 </form>
             </div>

@@ -1,3 +1,3 @@
 <x-app-layout>
-    Festival edit
+    Festival {{$festival->name}}
 </x-app-layout>

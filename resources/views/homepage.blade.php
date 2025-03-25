@@ -27,7 +27,7 @@
                 </div>
                 <div class="flex justify-center mt-5">
                     <div class="flex justify-center">
-                        <button class="p-2 bg-blue-500 hover:bg-blue-700 w-32 rounded-lg">
+                        <button class="p-2 bg-gray-500 hover:bg-gray-700 text-white w-32 rounded-lg text-white">
                             Zoeken
                         </button>
                     </div>
@@ -62,10 +62,10 @@
             </div>
             <div class="flex flex-row justify-center m-5">
                 <div class="flex gap-10">
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Meer info
                     </a>
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Ticket boeken
                     </a>
                 </div>
@@ -85,10 +85,10 @@
             </div>
             <div class="flex flex-row justify-center m-5">
                 <div class="flex gap-10">
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Meer info
                     </a>
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Ticket boeken
                     </a>
                 </div>
@@ -107,10 +107,10 @@
             </div>
             <div class="flex flex-row justify-center m-5">
                 <div class="flex gap-10">
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Meer info
                     </a>
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Ticket boeken
                     </a>
                 </div>
@@ -130,10 +130,10 @@
             </div>
             <div class="flex flex-row justify-center m-5">
                 <div class="flex gap-10">
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Meer info
                     </a>
-                    <a href="" class="p-2 bg-blue-500 hover:bg-blue-700 rounded-lg">
+                    <a href="" class="p-2 bg-gray-500 hover:bg-gray-700 text-white rounded-lg">
                         Ticket boeken
                     </a>
                 </div>

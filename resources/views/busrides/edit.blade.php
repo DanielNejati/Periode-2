@@ -1,3 +1,3 @@
 <x-app-layout>
-    Busritten edit
+    Busritten {{$busride->bus_ride_id}} edit
 </x-app-layout>

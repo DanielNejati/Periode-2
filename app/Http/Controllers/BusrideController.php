@@ -49,7 +49,7 @@ class BusrideController extends Controller
     public function edit($id)
     {
         $busride = Busride::find($id);
-        return view('busrides.show', compact('busride'));
+        return view('busrides.edit', compact('busride'));
     }
 
     /**

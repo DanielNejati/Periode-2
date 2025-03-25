@@ -25,6 +25,7 @@ class BusrideFactory extends Factory
                 'festival_id'=> Festival::factory(),
                 'duration'=> $this->faker->numberBetween(1, 10),
                 'departure_time'=> $this->faker->time(),
+                'arrival_time'=> $this->faker->time(),
                 'departure'=> $this->faker->city(),
                 'location' => $this->faker->city(),
                 'date'=> $this->faker->date(),

@@ -38,6 +38,7 @@ return new class extends Migration
             $table->unsignedBigInteger('festival_id');
             $table->double('duration');
             $table->time('departure_time');
+            $table->time('arrival_time');
             $table->string('departure');
             $table->string('location');
             $table->date('date');

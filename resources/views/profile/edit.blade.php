@@ -6,35 +6,35 @@
             <div class="bg-gray-300 p-6 text-2xl">
                 <div class="flex flex-row mb-5">
                     {{--  Gebruikersnaam--}}
-                    <div class="flex justify-center min-w-[260px] lg:min-w-[350px] bg-blue-500 p-2">Gebruikersnaam</div>
+                    <div class="flex justify-center min-w-[260px] lg:min-w-[350px] bg-gray-500 text-white p-2">Gebruikersnaam</div>
                     <div
                         class="flex justify-center min-w-[260px] lg:min-w-[350px] bg-white p-2"> {{ Auth::user()->name }}</div>
                     {{--   De mogelijkheid om de gebruikersnaam te wijzigen--}}
                     <button id="openUserNamePopup">
-                        <img src="{{asset('photos/pencil.png')}}" alt="" class="scale-150 lg:scale-100 p-2 bg-blue-500">
+                        <img src="{{asset('photos/pencil.png')}}" alt="" class="scale-150 lg:scale-100 p-2 bg-gray-500 text-white">
                     </button>
                 </div>
                 {{--   Emailadres--}}
                 <div class="flex flex-row mb-5">
-                    <div class="flex justify-center min-w-[160px] lg:min-w-[200px] bg-blue-500 p-2">Emailadress</div>
+                    <div class="flex justify-center min-w-[160px] lg:min-w-[200px] bg-gray-500 text-white p-2">Emailadress</div>
                     <div
                         class="flex justify-center min-w-[360px] lg:min-w-[500px] bg-white p-2"> {{ Auth::user()->email }}</div>
                     {{--    De mogelijkheid om het emailadres te wijzigen--}}
                     <a href="">
                         <img src="{{asset('photos/pencil.png')}}" alt=""
-                             class="scale-150 mt-2 lg:scale-100 lg:mt-0 p-2 bg-blue-500">
+                             class="scale-150 mt-2 lg:scale-100 lg:mt-0 p-2 bg-gray-500 text-white">
                     </a>
                 </div>
                 {{--                Telefoonnummer--}}
                 <div class="flex flex-row mb-5">
-                    <div class="flex justify-center min-w-[160px] lg:min-w-[200px] bg-blue-500 p-2">Tel</div>
+                    <div class="flex justify-center min-w-[160px] lg:min-w-[200px] bg-gray-500 text-white p-2">Tel</div>
                     <div
                         class="flex justify-center min-w-[360px] lg:min-w-[500px] bg-white p-2">
                         +{{Auth::user()->tel }}</div>
                     {{--                    De mogelijkheid om het telefoonnummer te wijzigen--}}
                     <a href="">
                         <img src="{{asset('photos/pencil.png')}}" alt=""
-                             class="scale-150 mt-2 lg:scale-100 lg:mt-0 p-2 bg-blue-500">
+                             class="scale-150 mt-2 lg:scale-100 lg:mt-0 p-2 bg-gray-500 text-white">
                     </a>
                 </div>
                 {{--                    Wachtwoord--}}
@@ -42,7 +42,7 @@
                     <div class="bg-red-500 flex justify-center min-w-[520px] lg:min-w-[700px] p-2">Wachtwoord</div>
                     {{--                    Mogelijkheid om het wachtwoordt te wijzigen--}}
                     <button id="openPopup">
-                        <img src="{{asset('photos/pencil.png')}}" alt="" class="scale-150 lg:scale-100 p-2 bg-blue-500">
+                        <img src="{{asset('photos/pencil.png')}}" alt="" class="scale-150 lg:scale-100 p-2 bg-gray-500 text-white">
                     </button>
 
                 </div>
@@ -53,9 +53,9 @@
                         <div>Account Vip-punten: {{Auth::user()->vip_punten}}</div>
                         <div class="flex flex-row gap-10 mt-3">
                             <a href=""
-                               class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Reisgeschiedenis</a>
+                               class="bg-gray-500 text-white hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Reisgeschiedenis</a>
                             <a href=""
-                               class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Opwaarderen</a>
+                               class="bg-gray-500 text-white hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Opwaarderen</a>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ class Busride extends Model
 {
     /** @use HasFactory<\Database\Factories\BusrideFactory> */
     use HasFactory;
-    protected $primaryKey = 'busride_id';
+    protected $primaryKey = 'bus_ride_id';
 
     protected $fillable = [
       'bus_id',

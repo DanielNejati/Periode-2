@@ -12,8 +12,8 @@
                         <input class="rounded-lg text-xl" type="text" id="password" name="password">
                     </div>
                     <div class="flex justify-center gap-20 pb-10">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Login</button>
-                        <a class="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded-lg" href="{{ route('register') }}">Nog geen account?</a>
+                        <button class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Login</button>
+                        <a class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg" href="{{ route('register') }}">Nog geen account?</a>
                     </div>
                 </form>
             </div>
