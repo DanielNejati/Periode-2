@@ -15,7 +15,7 @@ class BusSeeder extends Seeder
     {
         Bus::factory()
             // Specifies the number of busses to create
-        ->count(10)
+        ->count(4)
         ->create();
     }
 }

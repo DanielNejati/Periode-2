@@ -16,7 +16,7 @@ class BusrideSeeder extends Seeder
         // Create busrides
         Busride::factory()
             // Specifies the number of busrides to create
-            ->count(10)
+            ->count(4)
             ->create();
     }
 }

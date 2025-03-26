@@ -18,7 +18,9 @@ Route::middleware('Admin')->group(function () {
     })->name("admin-dashboard");
 
     Route::get('admin/festival/edit/{id}', [FestivalController::class, 'edit'])->name('festival.edit');
+    Route::get('admin/festival/create', [FestivalController::class, 'create'])->name('festival.create');
     Route::get('admin/busride/edit/{id}', [BusrideController::class, 'edit'])->name('busride.edit');
+    Route::get('admin/busride/create', [BusrideController::class, 'create'])->name('busride.create');
     Route::get('admin/all-festivals', [ManagementController::class, 'indexFestival'])->name('management.indexFestival');
     Route::get('admin/all-busrides', [ManagementController::class, 'indexBusrides'])->name('management.indexBusrides');
     Route::get('admin/all-users', [ManagementController::class, 'indexUsers'])->name('management.indexUsers');

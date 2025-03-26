@@ -46,8 +46,13 @@
 
                         <div class="mt-5 bg-gray-100 p-5 min-w-[600px]">
                             <div class="flex flex-row gap-5">
-                                <img src="{{asset('photos/layluna.jpeg')}}" alt=""
-                                     class="max-w-[200px] max-h-[200px] p-2">
+                                @if($festival->picture == null)
+                                    <img src="{{asset('photos/layluna.jpeg')}}" alt=""
+                                         class="max-w-[200px] max-h-[200px] p-2">
+                                @else
+                                    <img src="{{asset('storage/' . $festival->picture)}}" alt=""
+                                         class="max-w-[200px] max-h-[200px] p-2">
+                                @endif
                                 <div class="flex flex-col">
                                     <label for="festival_id" class="text-xl">ID: {{$festival->festival_id}}</label>
                                     <label for="festival_id" class="text-xl">Naam: {{$festival->name}}</label>
@@ -59,7 +64,8 @@
                                 </div>
                             </div>
 
-                            <a href="{{route('festival.edit', ['id' => $festival->festival_id])}}" class="flex justify-center">
+                            <a href="{{route('festival.edit', ['id' => $festival->festival_id])}}"
+                               class="flex justify-center">
                                 <div class="bg-gray-500 hover:bg-gray-700 p-2 w-[100px] rounded">
                                     <div class="flex justify-center">
                                         Edit

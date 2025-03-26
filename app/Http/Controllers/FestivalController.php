@@ -35,25 +35,41 @@ class FestivalController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|max:255',
-            'duration' => 'required' | 'max:255',
-            'location' => 'required' | 'max:255',
-            'festival_type' => 'required' | 'max:255',
-            'price' => 'required' | 'numeric' | 'min:0',
-            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'name' => 'required|string|max:255',
+            'duration' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'festival_type' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $imagePath = null;
         // Checks if the request has a file named 'picture'
+//        if ($request->hasFile('picture')) {
+//            $imagePath = $request->file('picture')->store('uploads', 'public');
+//        } else {
+//            $imagePath = null;
+//        }
+
+        $imagePath = null;
+
         if ($request->hasFile('picture')) {
-            // If the picture-inputfield has been filled the picture will be uploaded to ./public/storage/uploads
-            $imagePath = $request->file('picture')->store('uploads', 'public');
+            try {
+                $imagePath = $request->file('picture')->store('uploads', 'public');
+                \Log::info('Image uploaded successfully: ' . $imagePath);
+            } catch (\Exception $e) {
+                \Log::error('Image upload failed: ' . $e->getMessage());
+            }
+        } else {
+            \Log::info('No picture uploaded.');
         }
 
         $festival = Festival::create(array_merge(
             $validated,
             ['picture' => $imagePath]
         ));
+
+        // Redirect or return response
+        return redirect()->route('management.indexFestival')->with('success', 'Festival created successfully.');
     }
 
     /**

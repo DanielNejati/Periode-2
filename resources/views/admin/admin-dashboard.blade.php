@@ -11,7 +11,7 @@
                         <a href="{{route('management.indexFestival')}}">
                             <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
                         </a>
-                        <a href="{{route('management.indexBusrides')}}">
+                        <a href="{{route('festival.create')}}">
                             <img src="{{asset('photos/plus.png')}}" class="w-[50px] bg-blue-500">
                         </a>
                     </div>
@@ -23,7 +23,7 @@
                         <a href="{{route('management.indexBusrides')}}">
                             <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
                         </a>
-                        <a href="{{route('management.indexBusrides')}}">
+                        <a href="{{route('busride.create')}}">
                             <img src="{{asset('photos/plus.png')}}" class="w-[50px] bg-blue-500">
                         </a>
                     </div>

@@ -15,6 +15,7 @@ class Festival extends Model
         'duration',
         'location',
         'festival_type',
+        'picture',
         'price',
     ];
 
