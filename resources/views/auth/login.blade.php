@@ -7,13 +7,22 @@
                     @csrf
                     <div class="flex flex-col p-8 text-2xl gap-3">
                         <label for="email">Email</label>
+                        @error('email')
+                        <div class="text-red-500 text-lg">{{ $message }}</div>
+                        @enderror
                         <input class="rounded-lg text-xl" type="text" id="email" name="email">
                         <label for="password">Wachtwoord</label>
                         <input class="rounded-lg text-xl" type="text" id="password" name="password">
+                        @error('password')
+                        <div class="text-red-500 text-lg">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="flex justify-center gap-20 pb-10">
-                        <button class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Login</button>
-                        <a class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg" href="{{ route('register') }}">Nog geen account?</a>
+                        <button class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">
+                            Login
+                        </button>
+                        <a class="bg-gray-500 hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg"
+                           href="{{ route('register') }}">Nog geen account?</a>
                     </div>
                 </form>
             </div>

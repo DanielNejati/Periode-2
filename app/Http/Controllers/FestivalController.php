@@ -12,7 +12,7 @@ class FestivalController extends Controller
      */
     public function index()
     {
-        $festivals = Festival::all();
+      $festivals = Festival::all();
         return view('festivals.index', compact('festivals'));
     }
 
@@ -29,6 +29,7 @@ class FestivalController extends Controller
         $festivals = Festival::all();
         return view('busrides.index', compact('festivals'));
     }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -86,7 +87,7 @@ class FestivalController extends Controller
      */
     public function edit($id)
     {
-        $festival = Festival::find($id);
+        $festival = Festival::findOrFail($id);
         return view('festivals.edit', compact('festival'));
     }
 
@@ -95,22 +96,34 @@ class FestivalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validate = $request->validate([
-            'name' => 'required|max:255',
-            'duration' => 'required' | 'max:255',
-            'location' => 'required' | 'max:255',
-            'festival_type' => 'required' | 'max:255',
-            'price' => 'required' | 'numeric' | 'min:0',
-            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'duration' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'festival_type' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        $imagePath = null;
-        // Checks if the request has a file named 'picture'
         if ($request->hasFile('picture')) {
-            // If the picture-inputfield has been filled the picture will be uploaded to ./public/storage/uploads
-            $imagePath = $request->file('picture')->store('uploads', 'public');
-            $validate['afbeelding'] = $imagePath;
+            $image = $request->file('picture');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+
+            // Delete old image (optional)
+            $oldImage = Festival::find($request->id)->image;
+            if ($oldImage && file_exists(public_path($oldImage))) {
+                unlink(public_path($oldImage));
+            }
+
+            // Move to 'public/uploads'
+            $image->move(public_path('storage/uploads'), $filename);
+
+            // Save the correct path (e.g., 'uploads/filename.jpg')
+            $festival = Festival::find($request->id);
+            $festival->picture = 'uploads/' . $filename;
+            $festival->save();
         }
+        return redirect()->route('management.indexFestival')->with('success', 'Festival updated successfully.');
+
     }
 
     /**

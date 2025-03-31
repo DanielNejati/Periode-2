@@ -4,6 +4,7 @@ use App\Http\Controllers\BusrideController;
 use App\Http\Controllers\FestivalController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Searchbar;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 
@@ -18,6 +19,7 @@ Route::middleware('Admin')->group(function () {
     })->name("admin-dashboard");
 
     Route::get('admin/festival/edit/{id}', [FestivalController::class, 'edit'])->name('festival.edit');
+    Route::post('admin/festival/update/{id}', [FestivalController::class, 'update'])->name('festival.update');
     Route::get('admin/festival/create', [FestivalController::class, 'create'])->name('festival.create');
     Route::get('admin/busride/edit/{id}', [BusrideController::class, 'edit'])->name('busride.edit');
     Route::get('admin/busride/create', [BusrideController::class, 'create'])->name('busride.create');
@@ -26,7 +28,6 @@ Route::middleware('Admin')->group(function () {
     Route::get('admin/all-users', [ManagementController::class, 'indexUsers'])->name('management.indexUsers');
     Route::resource('management', ManagementController::class);
 });
-
 
 
 //Festival controller

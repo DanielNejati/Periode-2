@@ -7,4 +7,13 @@
             </div>
         </div>
     </div>
+
+    @if(!$searchresult->isEmpty())
+        @foreach($searchresult as $sr)
+            {{$sr->bus_id}}
+        @endforeach
+    @else
+        Er zijn geen festivals gevonden
+    @endif
+
 </x-app-layout>

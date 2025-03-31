@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Busride;
 use App\Http\Requests\StoreBusrideRequest;
 use App\Http\Requests\UpdateBusrideRequest;
-use App\Models\busritten;
+use Illuminate\Http\Request;
 
 class BusrideController extends Controller
 {
