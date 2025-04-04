@@ -5,7 +5,7 @@
     <div class="flex justify-center mt-10">
         <div
             class="flex justify-center min-w-[600px] max-w-[600px] lg:min-w-[800px] lg:max-w-[800px] p-4 bg-gray-50 rounded-lg">
-            <form action="{{route('')}}">
+            <form action="">
                 @csrf
                 <div class="flex flex-col">
                     <div class="flex flex-row gap-8 lg:gap-20">

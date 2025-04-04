@@ -12,6 +12,9 @@ Route::get('/', function () {
     return view('homepage');
 })->name("homepage");
 
+Route::post('/', [ShoppingCartController::class, 'store'])->name('shoppingcart.store');
+
+
 Route::middleware('Admin')->group(function () {
 
     Route::get('/admin-dashboard', function () {
@@ -36,7 +39,7 @@ Route::resource('festival', FestivalController::class)->except(['edit','create',
 Route::resource('busride', BusrideController::class)->except(['edit','create', 'update', 'destroy']);
 
 //Redirect to named route...
-//Route::redirect('/here', '/there');
+//Route::redirect('/', '/festival');
 
 
 Route::get('/dashboard', function () {

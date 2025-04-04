@@ -13,9 +13,27 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
     protected $primaryKey = 'user_id';
 
-    // Een gebruiker kan meerdere bussen bevatten
+    // A user be assigned to multiple busses
     public function Busses(){
-        return $this->hasMany(Bus::class, 'user_id', 'user_id');
+        return $this->hasMany(Bus::class);
+    }
+    // A user has one shoppingcart
+
+    public function Shoppingcart(){
+        return $this->hasOne(ShoppingCart::class);
+    }
+
+    // A user has many orders
+    public function Orders(){
+        return $this->hasMany(Order::class);
+    }
+
+    // If the user has made an account the shoppingcart would be created and assigned to the user
+    protected static function booted(): void
+    {
+        static::created(function (User $user) {
+            $user->Shoppingcart()->create();
+        });
     }
 
     /**

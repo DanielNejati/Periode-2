@@ -6,7 +6,7 @@
         <div class="flex flex-row">
             <div class="flex items-center gap-10 md:gap-20">
                 {{--                Checkt of de huidige pagina de buspagina is, zo ja dan wordt de tekst 'busrides' met een underline weergegeven.--}}
-                @if(Request()->path() === 'busrides')
+                @if(Request()->path() === 'busride')
                     <a href="{{route('busride.index')}}" class="border-b-4 text-xl md:text-2xl text-white">Busritten</a>
                 @else
                     <a href="{{route('busride.index')}}" class="text-xl md:text-2xl text-white">Busritten</a>
@@ -36,7 +36,7 @@
         <div class="flex flex-row mr-5">
             <div class="flex items-center">
                 <a href="{{route('profile.edit')}}" class="text-md">
-                    @if(Request()->path() === 'profile')
+                    @if(Request()->path() === 'login' || Request()->path() === 'profile')
                         <img src="{{asset('photos/profiel-icon.png')}}" alt="" class=" border-b-4 max-w-[75px]">
                     @else
                         <img src="{{asset('photos/profiel-icon.png')}}" alt="" class="max-w-[75px]">
