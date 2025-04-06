@@ -53,20 +53,10 @@
                         </div>
                     </div>
                     <div class="flex justify-center mb-10">
-                        <button type="button" id="add-form-btn" class="bg-blue-500 text-white p-2 rounded">Add Another Ticket</button>
-                    </div>
-                    <div class="flex justify-center mb-10">
                         <button type="submit" class="bg-green-500 text-white p-2 rounded">Submit All Tickets</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('add-form-btn').addEventListener('click', function () {
-            const formContainer = document.querySelector('.ticket-group');
-            const newForm = formContainer.cloneNode(true);
-            document.getElementById('form-container').insertBefore(newForm, document.querySelector('.flex.justify-center.mb-10'));
-        });
-    </script>
 </x-app-layout>

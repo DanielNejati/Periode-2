@@ -64,6 +64,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/profile/transactions', [ProfileController::class, 'transactions'])->name('profile.transactions');
+    Route::get('/profile/deposit', [ProfileController::class, 'deposit'])->name('profile.deposit');
+    Route::post('/profile/deposit', [ProfileController::class, 'depositStore'])->name('profile.depositStore');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 

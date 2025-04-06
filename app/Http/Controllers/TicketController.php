@@ -29,20 +29,31 @@ class TicketController extends Controller
             'quantity' => 'required|integer|min:1',
         ]);
 
-        $user_id = Auth::id();
+        $user = Auth::user();
         $bus_ride_id = $validated['bus_ride_id'];
         $price = $validated['price'];
         $quantity = $validated['quantity'];
+        $total_price = $price * $quantity;
+        $vippoints = $total_price * 0.1;
+
 
         for ($i = 0; $i < $quantity; $i++) {
             Ticket::create([
                 'bus_ride_id' => $bus_ride_id,
                 'price' => $price,
-                'user_id' => $user_id,
+                'user_id' => $user->user_id,
             ]);
         }
+        $user->vip_punten += $vippoints;
+        if ($user->saldo >= $total_price) {
+            $user->saldo -= $total_price;
+        } else {
+            return view('profile.deposit')->withErrors(['error'=>'Not enough balance, make a deposit.']);
+        }
 
-        return redirect()->route('dashboard')->with('success', 'Tickets purchased successfully.');
+        $user->save();
+
+        return redirect()->route('profile.transactions')->with('success', 'Tickets purchased successfully.');
     }
     // Show the available tickets to the admin
     public function index()
@@ -82,8 +93,9 @@ class TicketController extends Controller
                 ]);
             }
 
-            return redirect()->route('ticket.index')->with('success', 'Tickets created successfully.');
         }
+        return redirect()->route('ticket.index');
+
     }
 
 // store function to validate the tickets before sending them to the database

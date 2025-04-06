@@ -27,6 +27,23 @@ class ProfileController extends Controller
 
         return view('profile.transactions', compact('user', 'tickets'));
     }
+    public function deposit(Request $request): View
+    {
+        $user = $request->user();
+        return view('profile.deposit', compact('user'));
+    }
+    public function depositStore(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'amount' => 'required|numeric|min:0',
+        ]);
+
+        $user = $request->user();
+        $user->saldo += $request->input('amount');
+        $user->save();
+
+        return Redirect::route('profile.deposit');
+    }
 
 
     /**
@@ -42,7 +59,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit');
     }
 
     /**

@@ -124,7 +124,7 @@ class FestivalController extends Controller
             $festival->picture = 'uploads/' . $filename;
             $festival->save();
         }
-        return redirect()->route('management.indexFestival')->with('success', 'Festival updated successfully.');
+        return redirect()->route('management.indexFestival');
 
     }
 
