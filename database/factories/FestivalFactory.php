@@ -23,7 +23,7 @@ class FestivalFactory extends Factory
             'duration' => $this->faker->numberBetween(1, 10),
             'location' => $this->faker->city,
             'festival_type' => $this->faker->word,
-            'price' => $this->faker->randomDigit,
+            'price' => $this->faker->numberBetween(1, 50),
 
         ];
     }

@@ -20,6 +20,14 @@ class ProfileController extends Controller
             'user' => $request->user(),
         ]);
     }
+    public function transactions(Request $request): View
+    {
+        $user = $request->user();
+        $tickets = $user->tickets;
+
+        return view('profile.transactions', compact('user', 'tickets'));
+    }
+
 
     /**
      * Update the user's profile information.

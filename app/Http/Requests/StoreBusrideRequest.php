@@ -11,6 +11,11 @@ class StoreBusrideRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        // Check if the user is authenticated
+        if (auth()->check()) {
+            // Check if the user has the 'admin' role
+            return auth()->user()->role === 'admin';
+        }
         return false;
     }
 

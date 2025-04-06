@@ -52,7 +52,7 @@
                         <div>Account saldo: €{{Auth::user()->saldo}}</div>
                         <div>Account Vip-punten: {{Auth::user()->vip_punten}}</div>
                         <div class="flex flex-row gap-10 mt-3">
-                            <a href=""
+                            <a href="{{route('profile.transactions')}}"
                                class="bg-gray-500 text-white hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Reisgeschiedenis</a>
                             <a href=""
                                class="bg-gray-500 text-white hover:bg-gray-700 text-white text-xl font-bold py-2 px-4 rounded-lg">Opwaarderen</a>

@@ -15,7 +15,7 @@ class FestivalSeeder extends Seeder
     {
         Festival::factory()
             // Specifies the number of festivals to create
-            ->count(4)
+            ->count(100)
             ->create();
     }
 }

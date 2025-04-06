@@ -2,20 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Bus;
+use App\Models\Ticket;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class BusSeeder extends Seeder
+class TicketSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Bus::factory()
-            // Specifies the number of busses to create
-        ->count(4)
-        ->create();
+        Ticket::factory()->count(100)->create();
     }
 }

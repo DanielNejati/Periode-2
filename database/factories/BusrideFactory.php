@@ -20,15 +20,16 @@ class BusrideFactory extends Factory
     protected $model = Busride::class;
     public function definition(): array
     {
+        $price = $this->faker->numberBetween(1, 10) * 5;
             return [
-                'bus_id'=> Bus::factory(),
                 'festival_id'=> Festival::factory(),
-                'duration'=> $this->faker->numberBetween(1, 10),
+                'duration'=> $this->faker->numberBetween(1, 7),
                 'departure_time'=> $this->faker->time(),
                 'arrival_time'=> $this->faker->time(),
                 'departure'=> $this->faker->city(),
                 'location' => $this->faker->city(),
                 'date'=> $this->faker->date(),
+                'price'=> $price,
         ];
     }
 }

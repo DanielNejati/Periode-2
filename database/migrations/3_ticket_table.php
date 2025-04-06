@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->unsignedBigInteger('ticket_id')->autoIncrement()->primary();
-            $table->enum('type', ['bus', 'festival']);
-            $table->string('name');
+            $table->id('ticket_id')->primary();
+            $table->unsignedBigInteger('bus_ride_id')->constrained('busrides');
+            $table->unsignedBigInteger('user_id')->nullable()->constrained('users');
             $table->double('price');
-            $table->integer('stock');
             $table->timestamps();
+
+            $table->foreign('bus_ride_id')->references('bus_ride_id')->on('busrides')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -27,5 +29,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('tickets');
+        Schema::table('tickets', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
+        });
     }
 };

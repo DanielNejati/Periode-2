@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Festival;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class FestivalController extends Controller
 {
@@ -56,12 +57,12 @@ class FestivalController extends Controller
         if ($request->hasFile('picture')) {
             try {
                 $imagePath = $request->file('picture')->store('uploads', 'public');
-                \Log::info('Image uploaded successfully: ' . $imagePath);
+                Log::info($imagePath);
             } catch (\Exception $e) {
-                \Log::error('Image upload failed: ' . $e->getMessage());
+                Log::error( $e->getMessage());
             }
         } else {
-            \Log::info('No picture uploaded.');
+            Log::info('No picture uploaded.');
         }
 
         $festival = Festival::create(array_merge(
@@ -70,7 +71,7 @@ class FestivalController extends Controller
         ));
 
         // Redirect or return response
-        return redirect()->route('management.indexFestival')->with('success', 'Festival created successfully.');
+        return redirect()->route('management.indexFestival');
     }
 
     /**
@@ -117,7 +118,8 @@ class FestivalController extends Controller
             // Move to 'public/uploads'
             $image->move(public_path('storage/uploads'), $filename);
 
-            // Save the correct path (e.g., 'uploads/filename.jpg')
+            // Save the correct path ('uploads/filename.jpg')
+
             $festival = Festival::find($request->id);
             $festival->picture = 'uploads/' . $filename;
             $festival->save();

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('festivals', function (Blueprint $table) {
-            $table->unsignedBigInteger('festival_id')->autoIncrement()->primary();
+            $table->id('festival_id')->primary();
             $table->string('name');
             $table->string('duration');
             $table->string('location');
@@ -22,19 +22,19 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('buses', function (Blueprint $table) {
-            $table->unsignedBigInteger('bus_id')->autoIncrement()->primary();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('festival_id');
-            $table->timestamps();
-
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
-            $table->foreign('festival_id')->references('festival_id')->on('festivals')->onDelete('cascade');
-        });
+//        Schema::create('buses', function (Blueprint $table) {
+//            $table->unsignedBigInteger('bus_id')->autoIncrement()->primary();
+//            $table->unsignedBigInteger('user_id');
+//            $table->unsignedBigInteger('festival_id');
+//            $table->timestamps();
+//
+//            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+//            $table->foreign('festival_id')->references('festival_id')->on('festivals')->onDelete('cascade');
+//        });
 
         Schema::create('busrides', function (Blueprint $table) {
-            $table->unsignedBigInteger('bus_ride_id')->autoIncrement()->primary();
-            $table->unsignedBigInteger('bus_id');
+            $table->id('bus_ride_id')->primary();
+//            $table->unsignedBigInteger('bus_id');
             $table->unsignedBigInteger('festival_id');
             $table->double('duration');
             $table->time('departure_time');
@@ -42,11 +42,12 @@ return new class extends Migration
             $table->string('departure');
             $table->string('location');
             $table->date('date');
+            $table->string('price')->default(30);
+            $table->string('available_tickets')->default(30);
             $table->timestamps();
 
-            $table->foreign('bus_id')->references('bus_id')->on('buses')->onDelete('cascade');
-            $table->foreign('festival_id')->references('festival_id')->on('festivals')->onDelete('cascade');
-        });
+//            $table->foreign('bus_id')->references('bus_id')->on('buses')->onDelete('cascade');
+            $table->foreign('festival_id')->references('festival_id')->on('festivals')->onDelete('cascade');        });
     }
 
     /**
@@ -55,7 +56,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('busrides');
-        Schema::dropIfExists('buses');
         Schema::dropIfExists('festivals');
     }
 };

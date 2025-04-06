@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Busride;
 use App\Http\Requests\StoreBusrideRequest;
 use App\Http\Requests\UpdateBusrideRequest;
+use App\Models\Festival;
 use Illuminate\Http\Request;
 
 class BusrideController extends Controller
@@ -23,7 +24,8 @@ class BusrideController extends Controller
      */
     public function create()
     {
-        return view('busrides.create');
+        $festivals = Festival::all();
+        return view('busrides.create', compact('festivals'));
     }
 
     /**
@@ -31,7 +33,17 @@ class BusrideController extends Controller
      */
     public function store(StoreBusrideRequest $request)
     {
-        //
+        $request->validate([
+            'festival_id' => 'required|exists:festivals,festival_id',
+            'duration' => 'required|string|max:255',
+            'departure_time' => 'required|date_format:H:i',
+            'location' => 'required|string|max:255',
+            'date' => 'required|date'
+        ]);
+
+        Busride::create($request->all());
+
+        return redirect()->route('magagement.busrides');
     }
 
     /**
@@ -55,9 +67,20 @@ class BusrideController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBusrideRequest $request, Busride $busride)
+    public function update(UpdateBusrideRequest $request, $id)
     {
-        //
+        $validatedform = $request->validate([
+            'festival_id' => 'required|exists:festivals,festival_id',
+            'duration' => 'required|string|max:255',
+            'departure_time' => 'required|date_format:H:i',
+            'location' => 'required|string|max:255',
+            'date' => 'required|date'
+        ]);
+        $busride = Busride::find($id);
+
+        $busride->update($validatedform);
+
+        return redirect()->route('busrides.index');
     }
 
     /**

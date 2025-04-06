@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             FestivalSeeder::class,
             BusrideSeeder::class,
-            BusSeeder::class
+            Ticketseeder::class
        ]);
     }
 }

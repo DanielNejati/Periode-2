@@ -1,6 +1,6 @@
 @vite(['resources/js/checkbox.js'])
 <x-app-layout>
-    <div class="flex justify-center items-center mt-15">
+    <div class="flex justify-center items-center mt-15 mb-15">
         <div class="flex flex-col min-w-[1200px] max-w-[1200px] lg:max-w-[1400px] lg:min-w-[1400px] bg-gray-400">
             <div class="flex justify-center p-4 text-3xl">Gebruikers Lijst</div>
             <div class="bg-gray-300 p-6 text-2xl">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="mb-10">
                     @foreach($users as $user)
                         <div class="flex justify-center">
                             <div class="flex flex-wrap mt-10 min-w-[1200px] max-w-[1200px] bg-gray-400 p-3 rounded-xl">
@@ -64,7 +64,7 @@
                                         <a href="" class="flex justify-center min-w-[70px] max-w-[70px]">
                                             <img src="{{asset('photos/accounthistory.png')}}" class="max-w-[40px] ">
                                         </a>
-                                        <a href="" class="flex justify-center min-w-[70px] max-w-[70px]">
+                                        <a href="{{route('user.usersEdit', $user->user_id)}}" class="flex justify-center min-w-[70px] max-w-[70px]">
                                             <img src="{{asset('photos/pencil.png')}}" class="max-w-[40px] ">
                                         </a>
                                     </div>

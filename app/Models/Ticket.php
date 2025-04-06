@@ -2,14 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
+    use HasFactory;
     protected $fillable =
-        ['type', 'name', 'price', 'stock',];
+        ['bus_ride_id', 'user_id', 'price'];
 
-    public function shoppingcartItems(){
-        return $this->hasMany(ShoppingCartItem::class);
+    public function busrides(){
+        return $this->belongsTo(Busride::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

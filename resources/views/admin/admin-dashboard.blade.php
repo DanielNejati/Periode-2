@@ -36,9 +36,22 @@
                         <a href="{{route('management.indexUsers')}}">
                             <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
                         </a>
+
                     </div>
                 </div>
+                <div class="flex flex-row mb-5">
+                    {{-- Lijst om gebruikers te bekijken          --}}
+                    <div class="flex justify-center bg-gray-400 p-2 text-2xl min-w-[400px]">Tickets</div>
+                    <div class="ml-[120px] flex gap-5">
+                        <a href="{{route('ticket.index')}}">
+                            <img src="{{asset('photos/oogicoon.png')}}" class="w-[50px] bg-blue-500">
+                        </a>
 
+                        <a href="{{route('ticket.create')}}">
+                            <img src="{{asset('photos/plus.png')}}" class="w-[50px] bg-blue-500">
+                        </a>
+                    </div>
+                </div>
 
             </div>
         </div>
